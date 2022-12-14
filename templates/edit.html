@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Todos</h1>
+    <form action="" method="post">
+        <input type="text" name="item" id="" placeholder="update_item" value="{{todo.item}}">
+        <div class="">
+            <label for="">Done</label>
+            <input type="checkbox" name="is_done" id="is_done" value="True">
+        </div>
+        <input type="submit" value="Update">
+    </form>
+{%endblock content%}

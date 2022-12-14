@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Todos</h1>
+    <form action="" method="post">
+        <input type="text" name="item" id="" placeholder="Enter an item">
+        <input type="submit" value="Add">
+    </form>
+    <div class="todos">
+        {% for todo in todos %}
+            <div class="todo">
+                <p class="todo-item">{{todo.item}}</p>
+                {% if todo.is_done %}
+                    <p class="todo-is-done">
+                        Done
+                    </p>
+                {% else %}
+                    <p>Not Done</p>
+                {% endif %}
+                <a href="{{url_for('todos.update_todo',todo_id=todo.id)}}">Edit</a>
+                <a href="{{url_for('todos.delete_todo',todo_id=todo.id)}}">Delete</a>
+            </div>
+        {% endfor %}    
+    </div>
+{% endblock content %}
+    
